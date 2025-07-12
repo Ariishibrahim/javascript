@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onchange Event with Flags</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20px;
+        }
+        #selected-country {
+            margin-top: 20px;
+            font-size: 18px;
+            color: blue;
+        }
+        .hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Select a Country From Africa</h2>
+    <select id="countryDropdown">
+        <option value="" disabled selected>select a country</option>
+        <option value="Nigeria">Nigeria</option>
+        <option value="Egypt">Egypt</option>
+        <option value="South Africa">South Africa</option>
+        <option value="Kenya">Kenya</option>
+        <option value="Ethiopia">Ethiopia</option>
+        <option value="Ghana">Ghsana</option>
+        <option value="Morocco">Morocco</option>
+        <option value="Algeria">Algeria</option>
+        <option value="Uganda">Uganda</option>
+        <option value="Tanzania">Tanzania</option>
+        <option value="Somalia">Somalia</option>
+    </select>
+
+    <div id="selected-country"></div>
+    <script>
+        const countryDropdown = document.getElementById("countryDropdown");
+        const selectedCountryDisplay = document.getElementById("selected-country");
+
+
+        countryDropdown.addEventListener('change', function() {
+            const selectedCountry = countryDropdown.value;
+            selectedCountryDisplay.textContent = `You selected: ${selectedCountry}`;
+        }
+    ) 
+
+    </script>
+
+</body>
+</html>

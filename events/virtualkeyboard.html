@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Events</title>
+    <style>
+        .keyboard {
+            display: grid;
+            grid-template-columns: repeat(10, 50px);
+            gap: 5px;
+            margin: 20px;
+        }
+        .key {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+        }
+        .key.active {
+            background-color: #00f;
+            color: #fff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Virtual Keyboard</h2>
+    <p>Press any key to see it highlighted!</p>
+    <div class="keyboard" id="keyboard"></div>
+    <script>
+        const keyboardContainer = document.getElementById('keyboard');
+
+        const keys = [
+            ...'1234567890',
+            ...'qwertyuiop',
+            ...'asdfghjkl',
+            ...'zxcvbnm',
+            'space', 'enter', 'backspace'
+        ];
+
+        keys.forEach(key => {
+            const keyButton = document.createElement('div');
+            keyButton.classList.add('key');
+            keyButton.textContent = key === 'space' ? 'Space' : key;
+            keyButton.dataset.key = key;
+            keyboardContainer.appendChild(keyButton);
+        });
+
+        document.addEventListener('keydown', (event) => {
+            const keyPressed = event.key.toLowerCase();
+            const allKeys = document.querySelectorAll('.key');
+
+            allKeys.forEach(key => key.classList.remove('active'));
+
+            const targetKey = Array.from(allKeys).find(key => key.dataset.key === keyPressed);
+            if (targetKey) {
+                targetKey.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
