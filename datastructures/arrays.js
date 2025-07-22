@@ -1,0 +1,1 @@
+let firstNames = ["Ali","Farah", "Hassan", "Sara" ]

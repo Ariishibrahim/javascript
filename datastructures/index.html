@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1>Javascript Map</h1>
+    <h2>The new map method</h2>
+    <p>Creating a map from an array</p>
+    <p id="demo"></p>
+    <script>
+        const fruits = new Map([
+            ['apple', 500],
+            ['banana', 100],
+            ['cherry', 150]
+            ]);
+
+            let numb = fruits.get("apple");
+            document.getElementById("demo").innerHTML = 'There are ' + numb + ' apple'; -->
+
+            <h1>Javascript Maps</h1>
+            <h2>The set method()</h2>
+            <p id="demo"></p>
+
+            <script>
+                const fruits = new Map();
+                fruits.set("apple", 500);
+                fruits.set("banana", 100);
+                fruits.set("cherry", 150);
+                let numb = fruits.get("apple");
+                document.getElementById("demo").innerHTML = 'There are ' + numb + ' apple';
+
+            </script>
+
+            let student = {
+                name: "John",
+                age: 20,
+            }
+            let studentMap = new Map(Object.entries(student));
+            console.log(studentMap.get('name'));
+
+
+    </script>
+</body>
+</html>
