@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>Cookie Login Example</h3>
+  <input type="text" id="username" placeholder="Enter Username">
+  <button onclick="saveUser()">Login</button>
+  <p id="greeting"></p>
+
+  <script>
+    function saveUser() {
+      let user = document.getElementById("username").value;
+      document.cookie = "username=" + user + "; max-age=86400"; // 1 day
+      showGreeting();
+    }
+
+    function getCookie(name) {
+      let cookies = document.cookie.split("; ");
+      for (let i = 0; i < cookies.length; i++) {
+        let [key, value] = cookies[i].split("=");
+        if (key === name) return value;
+      }
+      return "";
+    }
+
+    function showGreeting() {
+      let user = getCookie("username");
+      if (user) {
+        document.getElementById("greeting").innerText = "Welcome back, " + user;
+      }
+    }
+
+    // Show greeting when page loads
+    showGreeting();
+  </script>
+</body>
+</html>

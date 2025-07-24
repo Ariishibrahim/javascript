@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body onload="getLastAnswer()">
+    <h3>Session Storage</h3>
+    <p id="Last-answer-id"></p>
+    <label for="input-id"> Type Your Full Name</label>
+    <input type="text" id="input-id" value="" onblur="storeLastAnswer()">
+    <button type="button" name="button" onclick="deleteLastAnswer()">Delete</button>
+    <script src="sessionStorageTest.js" charset="utf-8"></script>
+    
+</body>
+</html>
